@@ -5,12 +5,18 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+/**
+ * The type Server.
+ */
 public class Server {
     private ServerSocket serverSocket;
     private BufferedReader socketIn;
     private PrintWriter socketOut;
     private Socket aSocket;
 
+    /**
+     * Instantiates a new Server.
+     */
     public Server(){
         try {
             serverSocket = new ServerSocket(8099);
@@ -24,6 +30,9 @@ public class Server {
 
     }
 
+    /**
+     * Run server.
+     */
     public void runServer(){
         String line ="";
 
@@ -49,6 +58,12 @@ public class Server {
     }
 
 
+    /**
+     * Is palindrome boolean.
+     *
+     * @param str the str
+     * @return the boolean
+     */
     public boolean isPalindrome(String str){
         // Pointers pointing to the beginning
         // and the end of the string
@@ -71,6 +86,11 @@ public class Server {
         return true;
     }
 
+    /**
+     * Main.
+     *
+     * @param args the args
+     */
     public static void main(String [] args){
        Server myServer = new Server();
        myServer.runServer();
